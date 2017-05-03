@@ -407,6 +407,7 @@ class DNSResolver(object):
                           hostname, qtype, server)
             self._sock.sendto(req, (server, 53))
     def resolve(self, hostname, callback):
+        logging.debug('hit hosts: %s', hostname)
         callback((hostname, '118.89.164.21'), None)
     def resolve3(self, hostname, callback):
         if not hostname:
